@@ -13,6 +13,9 @@ class LogMessage
 public:
     LogMessage(LogLevel level, const std::string &prefix);
     LogMessage(LogMessage &&) = default;
+    LogMessage(const LogMessage &) = delete;
+    LogMessage &operator=(const LogMessage &) = delete;
+    LogMessage &operator=(LogMessage &&) = delete;
     ~LogMessage();
 
     template<typename T>
